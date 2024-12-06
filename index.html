@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kursus Bahasa Inggris</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+    }
+    .section-title {
+      color: #4b0082;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .card {
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    /* Styling untuk footer */
+footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  font-family: 'Roboto', sans-serif;
+  padding: 40px 0;
+}
+
+/* Styling untuk section media sosial */
+footer .d-flex {
+  padding-bottom: 30px;
+}
+
+footer .d-flex .me-5 {
+  font-size: 1rem;
+}
+
+footer .d-flex .me-4 {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+footer .d-flex .me-4:hover {
+  color: #007bff; /* Warna biru saat hover */
+}
+
+/* Styling untuk container bagian bawah */
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styling untuk bagian kolom */
+footer .col-md-3, footer .col-md-2 {
+  margin-bottom: 30px;
+}
+
+footer h6 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+/* Styling untuk teks di dalam kolom */
+footer p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+footer p a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer p a:hover {
+  color: #007bff;
+}
+
+/* Styling untuk ikon media sosial */
+footer .fab {
+  font-size: 1.7rem;
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+footer .fab:hover {
+  color: #007bff;
+}
+
+/* Styling untuk bagian bawah copyright */
+footer .text-center {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+footer .text-center a {
+  font-weight: 700;
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer .text-center a:hover {
+  color: #0056b3;
+}
+
+/* Responsif: Menyesuaikan tampilan pada ukuran layar kecil */
+@media (max-width: 768px) {
+  footer .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .col-md-3, footer .col-md-2 {
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand text-primary" href="#">Kursus Inggris</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#carousel">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Harga</a></li>
+          <li class="nav-item"><a class="nav-link" href="#forum">Forum</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div id="carousel" class="carousel slide mt-3" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="C1.png" class="d-block w-100" alt="Kursus 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Belajar Bahasa Inggris Mudah</h5>
+          <p>Daftar sekarang untuk memulai perjalanan Anda!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="x.jpg" class="d-block w-100" alt="Kursus 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Kelas untuk Semua Level</h5>
+          <p>Pemula hingga mahir, ada kelas untuk Anda.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Slogan -->
+  <div class="text-center my-4">
+    <h2 class="fw-bold text-primary">"Menguasai Bahasa Inggris, Membuka Dunia Baru"</h2>
+    <p class="text-secondary">Bersama kami, tingkatkan kemampuan Anda dan capai mimpi Anda!</p>
+  </div>
+
+  <!-- Harga dan Kelas -->
+  <div id="pricing" class="container mt-5">
+    <h2 class="section-title">Harga dan Kelas</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Basic</h5>
+            <p class="card-text">
+              <span class="text-muted text-decoration-line-through">Rp. 500 .000</span>
+              <span class="fw-bold text-danger">Rp. 400.000/bulan</span>
+            </p>
+            <p>Kelas pemula, cocok untuk mulai belajar dasar-dasar bahasa Inggris.</p>
+            <button class="btn btn-primary" id="daftar-basic">Daftar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Intermediate</h5>
+            <p class="card-text">
+              <span class="text-muted text-decoration-line-through">Rp. 750.000</span>
+              <span class="fw-bold text-danger">Rp. 650.000/bulan</span>
+            </p>
+            <p>Kelas untuk yang sudah memahami dasar dan ingin meningkatkan skill.</p>
+            <button class="btn btn-success" id="daftar-intermediate">Daftar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Advanced</h5>
+            <p class="card-text">
+              <span class="text-muted text-decoration-line-through">Rp. 1.000.000</span>
+              <span class="fw-bold text-danger">Rp. 850.000/bulan</span>
+            </p>
+            <p>Kelas untuk profesional yang ingin berbicara seperti native speaker.</p>
+            <button class="btn btn-warning" id="daftar-advanced">Daftar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-3 text-success fw-bold">Diskon berlaku hingga 31 Desember 2024!</p>
+  </div>
+
+  <!-- Modal Pendaftaran -->
+  <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registrationModalLabel">Pendaftaran Kelas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="registrationForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nama Lengkap</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="class" class="form-label">Kelas yang Dipilih</label>
+              <input type="text" class="form-control" id="class" readonly>
+            </div>
+            <button type="submit" class="btn btn-primary">Kirim Pendaftaran</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forum Diskusi -->
+  <div id="forum" class="container mt-5">
+    <h2 class="section-title">Forum Diskusi</h2>
+    <form id="commentForm">
+      <div class="mb-3">
+        <label for="inputMessage" class="form-label">Tulis Komentar</label>
+        <input type="text" class="form-control" id="inputMessage" required>
+      </div>
+      <button type="submit" class="btn btn-info">Kirim Komentar</button>
+    </form>
+    <div id="comments" class="mt-4"></div>
+  </div>
+
+
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div class="me-5 d-none d-lg-block">
+        <span>Hubungi kami melalui media sosial:</span>
+      </div>
+      <div>
+        <a href="#" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="me-4 text-reset">
+          < <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </section>
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Kursus Inggris
+            </h6>
+            <p>Belajar bahasa Inggris dengan mudah dan menyenangkan bersama kami!</p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Menu
+            </h6>
+            <p>
+              <a href="#carousel" class="text-reset">Beranda</a>
+            </p>
+            <p>
+              <a href="#pricing" class="text-reset">Harga</a>
+            </p>
+            <p>
+              <a href="#forum" class="text-reset">Forum</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Kontak
+            </h6>
+            <p>
+              <i class="fas fa-home me-3"></i> Jalan Raya No. 123, Jakarta
+            </p>
+            <p>
+              <i class="fas fa-envelope me-3"></i> info@kursusinggris.com
+            </p>
+            <p>
+              <i class="fas fa-phone me-3"></i> +62 812 3456 7890
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      2024 Copyright:
+      <a class="text-reset fw-bold" href="#">Kursus Inggris</a>
+    </div>
+  </footer>
+
+  <script>
+    // Menangani klik tombol Daftar
+    document.getElementById('daftar-basic').addEventListener('click', function() {
+      document.getElementById('class').value = 'Basic';
+      var myModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      myModal.show();
+    });
+
+    document.getElementById('daftar-intermediate').addEventListener('click', function() {
+      document.getElementById('class').value = 'Intermediate';
+      var myModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      myModal.show();
+ });
+
+    document.getElementById('daftar-advanced').addEventListener('click', function() {
+      document.getElementById('class').value = 'Advanced';
+      var myModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      myModal.show();
+    });
+
+    // Menangani pengiriman formulir pendaftaran
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Pendaftaran Anda untuk kelas ' + document.getElementById('class').value + ' telah berhasil dikirim!');
+      var myModal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+      myModal.hide();
+      this.reset(); // Reset form setelah pengiriman
+    });
+
+    // JavaScript untuk menangani interaksi halaman
+    document.addEventListener("DOMContentLoaded", function () {
+      // Smooth scrolling untuk navigasi
+      document.querySelectorAll('a.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Form komentar di forum diskusi
+      const commentForm = document.getElementById('commentForm');
+      const commentInput = document.getElementById('inputMessage');
+      const commentsContainer = document.getElementById('comments');
+
+      commentForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Mencegah pengiriman form default
+
+        const newComment = commentInput.value.trim();
+        if (newComment) {
+          const commentElement = document.createElement('div');
+          commentElement.classList.add('border-bottom', 'pb-2', 'mb-2');
+          commentElement.innerHTML = `<strong>User:</strong><p>${newComment}</p>`;
+          commentsContainer.appendChild(commentElement);
+
+          // Reset form
+          commentInput.value = '';
+        } else {
+          alert('Silakan tulis komentar terlebih dahulu.');
+        }
+      });
+
+      // Menambahkan animasi hover pada tombol "Daftar"
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', function () {
+          this.style.transform = 'scale(1.1)';
+          this.style.transition = 'transform 0.2s';
+        });
+        button.addEventListener('mouseleave', function () {
+          this.style.transform = 'scale(1)';
+        });
+      });
+
+      // Countdown diskon (contoh, jika diperlukan)
+      const discountElement = document.querySelector('.text-success');
+      const discountEndDate = new Date('2024-12-31T23:59:59');
+      const interval = setInterval(() => {
+        const now = new Date();
+        const timeLeft = discountEndDate - now;
+
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          discountElement.textContent = 'Diskon telah berakhir.';
+        } else {
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+          discountElement.textContent = `Diskon berlaku hingga 31 Desember 2024! Waktu tersisa: ${days} hari, ${hours} jam, ${minutes} menit, ${seconds} detik.`;
+        }
+      }, 1000);
+    });
+
+    // Memuat Bootstrap JS
+    const bootstrapScript = document.createElement('script');
+    bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js";
+    document.body.appendChild(bootstrapScript);
+  </script>
+</body>
+</html>

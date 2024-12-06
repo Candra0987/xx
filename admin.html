@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kursus Bahasa Inggris - Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .admin-section {
+      margin-top: 50px;
+    }
+    .modal .form-control {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand text-primary" href="#">Kursus Inggris - Admin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#carousel">Kelola Konten</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Admin Section -->
+  <div class="container admin-section">
+    <h2 class="text-center mb-4">Admin Panel - Kelola Konten</h2>
+
+    <div id="contentTable">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Konten</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="contentList">
+          <tr>
+            <td>1</td>
+            <td>"Belajar Bahasa Inggris Mudah"</td>
+            <td>
+              <button class="btn btn-warning btn-sm" onclick="editContent(1)">Edit</button>
+              <button class="btn btn-danger btn-sm" onclick="deleteContent(1)">Hapus</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button class="btn btn-primary" onclick="showAddModal()">Tambah Konten</button>
+  </div>
+
+  <!-- Modal Add/Edit -->
+  <div class="modal fade" id="contentModal" tabindex="-1" aria-labelledby="contentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contentModalLabel">Tambah/Edit Konten</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="contentForm">
+            <input type="hidden" id="contentId">
+            <label for="contentText" class="form-label">Konten</label>
+            <input type="text" class="form-control" id="contentText" required>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-primary" onclick="saveContent()">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let contentData = [
+      { id: 1, text: "Belajar Bahasa Inggris Mudah" }
+    ];
+
+    function refreshContentList() {
+      const contentList = document.getElementById("contentList");
+      contentList.innerHTML = '';
+      contentData.forEach((item, index) => {
+        contentList.innerHTML += `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${item.text}</td>
+            <td>
+              <button class="btn btn-warning btn-sm" onclick="editContent(${item.id})">Edit</button>
+              <button class="btn btn-danger btn-sm" onclick="deleteContent(${item.id})">Hapus</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    function showAddModal() {
+      document.getElementById("contentModalLabel").innerText = "Tambah Konten";
+      document.getElementById("contentId").value = '';
+      document.getElementById("contentText").value = '';
+      new bootstrap.Modal(document.getElementById("contentModal")).show();
+    }
+
+    function editContent(id) {
+      const content = contentData.find(item => item.id === id);
+      document.getElementById("contentModalLabel").innerText = "Edit Konten";
+      document.getElementById("contentId").value = content.id;
+      document.getElementById("contentText").value = content.text;
+      new bootstrap.Modal(document.getElementById("contentModal")).show();
+    }
+
+    function saveContent() {
+      const id = document.getElementById("contentId").value;
+      const text = document.getElementById("contentText").value;
+      if (id) {
+        // Edit existing content
+        const content = contentData.find(item => item.id == id);
+        content.text = text;
+      } else {
+        // Add new content
+        const newId = contentData.length ? contentData[contentData.length - 1].id + 1 : 1;
+        contentData.push({ id: newId, text });
+      }
+      refreshContentList();
+      bootstrap.Modal.getInstance(document.getElementById("contentModal")).hide();
+    }
+
+    function deleteContent(id) {
+      contentData = contentData.filter(item => item.id !== id);
+      refreshContentList();
+    }
+
+    // Initialize
+    refreshContentList();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
